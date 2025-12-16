@@ -1,0 +1,69 @@
+steward:
+  name: "Vilicus Umbrae"
+  mode: "dry-run"
+  log_level: "INFO"
+
+schedule:
+  frequency_hours: 12
+  run_window: "any"
+
+disk:
+  monitor_paths: ["/", "/home"]
+  usage_thresholds:
+    warning_percent: 75
+    critical_percent: 85
+  growth_detection:
+    enabled: true
+    lookback_runs: 3
+    min_growth_mb: 500
+
+memory:
+  ram_warning_percent: 80
+  ram_critical_percent: 90
+  swap:
+    monitor: true
+    usage_warning_percent: 40
+
+cpu:
+  load_average_window: 5
+  warning_multiplier: 1.5
+  critical_multiplier: 2.0
+
+logs:
+  monitor: true
+  paths: ["/var/log"]
+  size_warning_mb: 500
+  size_critical_mb: 1024
+  rotation_check: true
+
+cleanup:
+  enabled: true
+  package_cache:
+    enabled:true:
+    command: "apt-get clean"
+    requires_sudo: true
+  temp_dirs:
+    enabled: true
+    paths: ["/tmp"]
+    min_age_days: 7
+
+backups:
+  enabled: true
+  expected_paths: ["/home/*/backups"]
+  max_days_since_last_backup: 3
+  size_change_warning_percent: 30
+
+reporting:
+  save_reports: true
+  report_dir: "./reports"
+  format: "markdown"
+  terminal_summary:
+    enabled: true
+    verbosity: "brief"
+
+security:
+  allow_sudo:
+    - "apt-get clean"
+  forbid_actions:
+    - "rm -rf /"
+    - "kill -9"

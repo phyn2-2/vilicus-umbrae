@@ -1,0 +1,9 @@
+{
+    "meta": { "version": "1.0", "created_at": null },
+    "last_run": { "timestamp": null, "status": null, "duration_seconds": null },
+    "disk": {},
+    "memory": {},
+    "cpu": {},
+    "logs": {},
+    "backups": {}
+}
