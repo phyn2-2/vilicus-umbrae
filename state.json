@@ -1,9 +1,123 @@
 {
-    "meta": { "version": "1.0", "created_at": null },
-    "last_run": { "timestamp": null, "status": null, "duration_seconds": null },
-    "disk": {},
-    "memory": {},
-    "cpu": {},
-    "logs": {},
-    "backups": {}
+  "meta": {
+    "version": "1.0",
+    "created_at": null
+  },
+  "last_run": {
+    "timestamp": "2026-01-03T23:08:39.538150",
+    "status": "success",
+    "duration_seconds": 0.095574
+  },
+  "disk": {},
+  "memory": {
+    "ram": {
+      "total_bytes": 4056567808,
+      "used_bytes": 2172149760,
+      "available_bytes": 1884418048,
+      "used_percent": 53.55,
+      "total_human": "3.78 GB",
+      "used_human": "2.02 GB",
+      "available_human": "1.76 GB"
+    },
+    "swap": {
+      "total_bytes": 6266621952,
+      "used_bytes": 20480,
+      "free_bytes": 6266601472,
+      "used_percent": 0.0,
+      "total_human": "5.84 GB",
+      "used_human": "20.00 KB",
+      "free_human": "5.84 GB"
+    },
+    "alerts": [],
+    "top_consumers": [
+      {
+        "user": "baphyn",
+        "pid": "7231",
+        "mem_percent": "13.5",
+        "command": "/opt/brave.com/brave/brave --type=renderer --crash"
+      },
+      {
+        "user": "baphyn",
+        "pid": "7139",
+        "mem_percent": "8.3",
+        "command": "/opt/brave.com/brave/brave --type=renderer --crash"
+      },
+      {
+        "user": "baphyn",
+        "pid": "6753",
+        "mem_percent": "8.1",
+        "command": "/opt/brave.com/brave/brave"
+      },
+      {
+        "user": "baphyn",
+        "pid": "6802",
+        "mem_percent": "5.4",
+        "command": "/opt/brave.com/brave/brave --type=gpu-process --oz"
+      },
+      {
+        "user": "baphyn",
+        "pid": "6866",
+        "mem_percent": "3.9",
+        "command": "/opt/brave.com/brave/brave --type=renderer --crash"
+      }
+    ]
+  },
+  "cpu": {
+    "load_average": {
+      "1_min": 0.59,
+      "5_min": 0.82,
+      "15_min": 1.03,
+      "per_core_1min": 0.15,
+      "per_core_5min": 0.2,
+      "per_core_15min": 0.26
+    },
+    "cores": 4,
+    "alerts": [],
+    "top_consumers": [
+      {
+        "user": "baphyn",
+        "pid": "7819",
+        "cpu_percent": "100",
+        "command": "psaux--sort=-%cpu"
+      },
+      {
+        "user": "baphyn",
+        "pid": "7816",
+        "cpu_percent": "70.3",
+        "command": "python3./vilicus.py--execute"
+      },
+      {
+        "user": "root",
+        "pid": "861",
+        "cpu_percent": "18.1",
+        "command": "/usr/lib/xorg/Xorg:0-seatseat0-auth/var/run/lightd"
+      },
+      {
+        "user": "baphyn",
+        "pid": "7231",
+        "cpu_percent": "17.3",
+        "command": "/opt/brave.com/brave/brave--type=renderer--crashpa"
+      },
+      {
+        "user": "baphyn",
+        "pid": "7139",
+        "cpu_percent": "6.8",
+        "command": "/opt/brave.com/brave/brave--type=renderer--crashpa"
+      }
+    ]
+  },
+  "logs": {
+    "directories": {
+      "/var/log": {
+        "total_size_bytes": 958363221,
+        "total_size_human": "913.97 MB",
+        "file_count": 214
+      }
+    },
+    "large_files": [],
+    "alerts": [],
+    "total_size": 958363221,
+    "total_size_human": "913.97 MB"
+  },
+  "backups": {}
 }
