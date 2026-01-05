@@ -52,7 +52,13 @@ def generate_terminal_summary(observations: Dict[str, Any], cleanup_results: Dic
 
     if "disk" in observations and observations["disk"].get("summary"):
         summary = observations["disk"]["summary"]
-        lines.append(f" Disk: {summary.get('avg_usage_percent', 0):.1f}% average usage")
+
+        avg_usage = summary.get(
+            "avg_usage_percent",
+            summary.get("average_usage_percent", 0)
+        )
+
+        lines.append(f" Disk: {avg_usage:1f}% average usage")
 
     if "memory" in observations and observations["memory"].get("ram"):
         ram = observations["memory"]["ram"]

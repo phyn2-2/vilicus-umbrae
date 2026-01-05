@@ -54,12 +54,12 @@ def collect(config: Dict[str, Any], prev_state: Dict[str, Any]) -> Dict[str, Any
             if used_percent >= critical_pct:
                 result["alerts"].append({
                     "level":"critical",
-                    "message": f"Disk usage critical on {path}: {used_percent:.1f}% (thresholds: {critical_pct}%)"
+                    "message": f"Disk usage critical on {path}: {used_percent:.1f}% (threshold: {critical_pct}%)"
                 })
             elif used_percent >= warning_pct:
                 result["alerts"].append({
                     "level": "warning",
-                    "message": f"Disk usage warning on {path}: {used_percent:.1f}% (thresholds: {warning_pct}%)"
+                    "message": f"Disk usage warning on {path}: {used_percent:.1f}% (threshold: {warning_pct}%)"
                 })
 
             # Compare with Previous state
@@ -98,7 +98,7 @@ def collect(config: Dict[str, Any], prev_state: Dict[str, Any]) -> Dict[str, Any
         result["summary"] = {
             "total_space": format_bytes(total_space),
             "total_used": format_bytes(total_used),
-            "avg_usage_percent": round(avg_usage, 2)
+            "average_usage_percent": round(avg_usage, 2)
         }
 
     return result

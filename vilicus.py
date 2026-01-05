@@ -65,7 +65,7 @@ def run_observations(config: Dict[str, Any], prev_state: Dict[str, Any], logger)
 
     # Disk monitoring
     logger.debug("Collecting disk usage...")
-    observations["memory"] = memory.collect(config, prev_state)
+    observations["disk"] = disk.collect(config, prev_state)
 
     # Memory monitoring
     logger.debug("Collecting memory usage...")
