@@ -1,0 +1,32 @@
+[Unit]
+Description=Vilicus Umbrae - System Guardian
+Documentation=https://github.com/phyn2-2/vilicus-umbrae
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=baphyn
+Group=baphyn
+WorkingDirectory=/home/baphyn/Projects/vilicus-umbrae
+ExecStart=/home/baphyn/Projects/vilicus-umbrae/vilicus.py --execute
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vilicus
+
+# Security hardening
+PrivateTmp=yes
+NoNewPrivileges=yes
+ReadOnlyPaths=/bin /boot /lib /lib64 /sbin /usr
+ReadWritePaths=/home/baphyn/Projects/vilicus-umbrae
+
+# Environment
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target
+
+

@@ -1,0 +1,21 @@
+[Unit]
+Description=Vilicus Umbrae Timer - Runs every 12 hours
+Documentation=https://github.com/phyn2-2/vilicus-umbrae
+Requires=vilicus.service
+
+[Timer]
+# Run 10 minutes after boot (in case PC was off)
+OnBootSec=10min
+
+# Run every 12 hours after that
+OnUnitActiveSec=12h
+
+# If PC was off during scheduled time, run it when PC turns on!
+Persistent=yes
+
+# Add random 0-5 min delay (prevents all timers firing at once)
+RandomizedDelaySec=5min
+
+[Install]
+WantedBy=timers.target
+
